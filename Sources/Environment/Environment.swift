@@ -10,11 +10,7 @@ public struct Environment {
 
     public func getVar(name: String) -> String? {
         let out = getenv(name)
-        if out != nil {
-            return String.fromCString(out)
-        } else {
-            return nil
-        }
+        return String.fromCString(out)
     }
 
     public func removeVar(name: String) {
@@ -25,7 +21,4 @@ public struct Environment {
         setenv(name, value, replace ? 1 : 0)
     }
 }
-
-
-
 
