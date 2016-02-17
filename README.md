@@ -17,6 +17,12 @@
 .Package(url: "https://github.com/czechboy0/Environment.git", majorVersion: 0)
 ```
 
+## CocoaPods
+
+```ruby
+pod 'Environment'
+```
+
 # Usage
 Easily get, set and remove environment variables.
 
