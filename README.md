@@ -1,5 +1,6 @@
 # Environment
 
+[![Build Status](https://travis-ci.org/czechboy0/Environment.svg?branch=master)](https://travis-ci.org/czechboy0/Environment)
 [![Latest Release](https://img.shields.io/github/release/czechboy0/environment.svg)](https://github.com/czechboy0/environment/releases/latest)
 ![Platforms](https://img.shields.io/badge/platforms-Linux%20%7C%20OS%20X%20%7C%20iOS%20%7C%20tvOS%20%7C%20watchOS-blue.svg)
 ![Package Managers](https://img.shields.io/badge/package%20managers-swiftpm%20%7C%20CocoaPods-yellow.svg)
