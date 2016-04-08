@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Environment"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "Easy access to environment variables from Swift. Linux & OS X ready."
 
   s.description  = <<-DESC
