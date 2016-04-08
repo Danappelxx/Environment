@@ -10,7 +10,7 @@ public struct Environment {
 
     public func getVar(name: String) -> String? {
         let out = getenv(name)
-        return String.fromCString(out)
+        return String(validatingUTF8: out)
     }
 
     public func removeVar(name: String) {
