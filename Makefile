@@ -4,8 +4,8 @@ build:
 
 test: build
 	@echo "Testing Environment"
-	.build/debug/EnvironmentTests
+	@swift test
 
 clean:
-	rm -rf .build Packages
+	@swift build --clean=dist
 	
