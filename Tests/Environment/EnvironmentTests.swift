@@ -26,7 +26,7 @@ class EnvironmentTests: XCTestCase {
 }
 
 extension EnvironmentTests {
-    static var allTests : [(String, EnvironmentTests -> () throws -> Void)] {
+    static var allTests : [(String, (EnvironmentTests) -> () throws -> Void)] {
         return [
             ("testGet", testGet),
             ("testSetGet", testSetGet),
