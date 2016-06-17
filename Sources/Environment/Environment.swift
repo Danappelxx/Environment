@@ -5,20 +5,16 @@ import Darwin
 #endif
 
 public struct Environment {
-
-    public init() { }
-
-    public func getVar(_ name: String) -> String? {
+    public static func getVar(_ name: String) -> String? {
         guard let out = getenv(name) else { return nil }
         return String(validatingUTF8: out)
     }
 
-    public func removeVar(_ name: String) {
+    public static func removeVar(_ name: String) {
         unsetenv(name)
     }
 
-    public func setVar(_ name: String, value: String, replace: Bool = true) {
+    public static func setVar(_ name: String, value: String, replace: Bool = true) {
         setenv(name, value, replace ? 1 : 0)
     }
 }
-
