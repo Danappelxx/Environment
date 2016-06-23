@@ -5,22 +5,22 @@ import XCTest
 class EnvironmentTests: XCTestCase {
 
     func testGet() {
-        guard let path = Environment().getVar("PATH") else { XCTFail(); return }
+        guard let path = Env["PATH"] else { XCTFail(); return }
         XCTAssert(!path.isEmpty)
     }
 
     func testSetGet() {
-        Environment().setVar("KITTENS", value: "FUZZY")
-        let val = Environment().getVar("KITTENS")
+        Env["KITTENS"] = "FUZZY"
+        let val = Env["KITTENS"]
         XCTAssertEqual(val, "FUZZY")
     }
 
     func testRemove() {
-        Environment().setVar("MOARKITTENS", value: "FUZZIER")
-        let val = Environment().getVar("MOARKITTENS")
+        Env["MOARKITTENS"] = "FUZZIER"
+        let val = Env["MOARKITTENS"]
         guard val == "FUZZIER" else { XCTFail(); return }
-        Environment().removeVar("MOARKITTENS")
-        let valFinal = Environment().getVar("MOARKITTENS")
+        Env["MOARKITTENS"] = nil
+        let valFinal = Env["MOARKITTENS"]
         XCTAssertNil(valFinal)
     }
 }

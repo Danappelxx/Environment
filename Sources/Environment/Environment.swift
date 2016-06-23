@@ -20,5 +20,19 @@ public struct Environment {
     public func setVar(_ name: String, value: String, replace: Bool = true) {
         setenv(name, value, replace ? 1 : 0)
     }
+    
+    public subscript(key: String) -> String? {
+        get {
+            return getVar(key)
+        }
+        nonmutating set(newValue) {
+            if let newVal = newValue {
+                setVar(key, value: newVal, replace: true)
+            } else {
+                removeVar(key)
+            }
+        }
+    }
 }
 
+public let Env = Environment()
