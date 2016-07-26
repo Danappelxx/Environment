@@ -23,6 +23,11 @@ class EnvironmentTests: XCTestCase {
         let valFinal = Env["MOARKITTENS"]
         XCTAssertNil(valFinal)
     }
+    
+    func testAllKeyValues() {
+        let all = Env.all()
+        XCTAssertFalse(all.isEmpty)
+    }
 }
 
 extension EnvironmentTests {
@@ -30,7 +35,8 @@ extension EnvironmentTests {
         return [
             ("testGet", testGet),
             ("testSetGet", testSetGet),
-            ("testRemove", testRemove)
+            ("testRemove", testRemove),
+            ("testAllKeyValues", testAllKeyValues)
         ]
     }
 }
