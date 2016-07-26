@@ -1,5 +1,6 @@
 import PackageDescription
 
 let package = Package(
-  name: "Environment"
+  name: "Environment",
+  targets: [Target(name: "Environment", dependencies: ["CEnvironment"])]
 )

@@ -14,7 +14,7 @@
 ## Swift Package Manager
 
 ```swift
-.Package(url: "https://github.com/czechboy0/Environment.git", majorVersion: 0, minor: 4)
+.Package(url: "https://github.com/czechboy0/Environment.git", majorVersion: 0, minor: 5)
 ```
 
 # Usage
@@ -24,6 +24,7 @@ Easily get, set and remove environment variables.
 Env["PATH"] //Optional("/Users/honzadvorsky/") //get value for key `PATH`
 Env["TEST_RESULT"] = "1" //set value for key `TEST_RESULT`
 Env["TEST_RESULT"] = nil //remove value for key `TEST_RESULT`
+Env.all() //[String: String] - get all environment variables keyed by their name
 ```
 
 :gift_heart: Contributing
