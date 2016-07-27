@@ -44,17 +44,18 @@ public struct Environment {
     public func all() -> [String: String] {
         var env = environ
         var pairs: [String: String] = [:]
-        while true {
-            guard let cval = env?.pointee else { break }
-            let pairString = String(cString: cval)
+        while let cpair = env?.pointee {
+            defer { env = env?.successor() }
+
+            let pairString = String(cString: cpair)
             let pair = pairString
-                .characters
+                .unicodeScalars
                 .split(separator: "=", maxSplits: 2, omittingEmptySubsequences: false)
                 .map(String.init)
+
             if pair.count == 2 {
                 pairs[pair[0]] = pair[1]
             }
-            env = env?.advanced(by: 1)
         }
         return pairs
     }
