@@ -1,5 +1,5 @@
 import XCTest
-@testable import EnvironmentTestSuite
+@testable import EnvironmentTests
 
 XCTMain([
 	testCase(EnvironmentTests.allTests),
